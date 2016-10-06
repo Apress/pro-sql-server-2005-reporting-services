@@ -1,0 +1,26 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "CRM Report Pack", "CRM Report Pack.rptproj", "{5B2235E2-2F82-44F2-BB0A-D00516849F2E}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		DebugLocal = DebugLocal
+		Production = Production
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{5B2235E2-2F82-44F2-BB0A-D00516849F2E}.Debug.ActiveCfg = Debug
+		{5B2235E2-2F82-44F2-BB0A-D00516849F2E}.Debug.Build.0 = Debug
+		{5B2235E2-2F82-44F2-BB0A-D00516849F2E}.Debug.Deploy.0 = Debug
+		{5B2235E2-2F82-44F2-BB0A-D00516849F2E}.DebugLocal.ActiveCfg = DebugLocal
+		{5B2235E2-2F82-44F2-BB0A-D00516849F2E}.DebugLocal.Build.0 = DebugLocal
+		{5B2235E2-2F82-44F2-BB0A-D00516849F2E}.Production.ActiveCfg = Production
+		{5B2235E2-2F82-44F2-BB0A-D00516849F2E}.Production.Build.0 = Production
+		{5B2235E2-2F82-44F2-BB0A-D00516849F2E}.Production.Deploy.0 = Production
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

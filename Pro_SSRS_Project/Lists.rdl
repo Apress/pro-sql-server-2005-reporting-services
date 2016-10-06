@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="Pro_SSRS">
+      <DataSourceReference>Pro_SSRS</DataSourceReference>
+      <rd:DataSourceID>769813bb-3751-46b4-98b4-f3538fe85145</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <BottomMargin>1in</BottomMargin>
+  <RightMargin>1in</RightMargin>
+  <ReportParameters>
+    <ReportParameter Name="ServiceMonth">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>ServiceMonth</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ServiceYear">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>ServiceYear</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="BranchID">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>BranchID</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="EmployeeTblID">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>EmployeeTblID</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ServicesLogCtgryID">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>ServicesLogCtgryID</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ReportItems>
+      <List Name="list1">
+        <ReportItems>
+          <List Name="list2">
+            <Left>0.5in</Left>
+            <ReportItems>
+              <Textbox Name="Employee_Name">
+                <rd:DefaultName>Employee_Name</rd:DefaultName>
+                <ZIndex>3</ZIndex>
+                <Width>2in</Width>
+                <Style>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingBottom>2pt</PaddingBottom>
+                  <FontSize>9pt</FontSize>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                </Style>
+                <CanGrow>true</CanGrow>
+                <Height>0.25in</Height>
+                <Value>=Fields!Employee_Name.Value</Value>
+              </Textbox>
+              <Textbox Name="Estimated_Cost">
+                <Left>2.5in</Left>
+                <Top>0.25in</Top>
+                <rd:DefaultName>Estimated_Cost</rd:DefaultName>
+                <ZIndex>2</ZIndex>
+                <Width>2.5in</Width>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingBottom>2pt</PaddingBottom>
+                  <FontSize>9pt</FontSize>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                </Style>
+                <CanGrow>true</CanGrow>
+                <Value>=Sum(Fields!Estimated_Cost.Value)</Value>
+              </Textbox>
+              <Textbox Name="Service_Type">
+                <Left>0.625in</Left>
+                <Top>0.25in</Top>
+                <rd:DefaultName>Service_Type</rd:DefaultName>
+                <ZIndex>1</ZIndex>
+                <Width>1.875in</Width>
+                <Style>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingBottom>2pt</PaddingBottom>
+                  <FontSize>9pt</FontSize>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                </Style>
+                <CanGrow>true</CanGrow>
+                <Value>=Fields!Service_Type.Value</Value>
+              </Textbox>
+              <Textbox Name="Visit_Count">
+                <Left>2.5in</Left>
+                <rd:DefaultName>Visit_Count</rd:DefaultName>
+                <Width>2.25in</Width>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingBottom>2pt</PaddingBottom>
+                  <FontSize>9pt</FontSize>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                </Style>
+                <CanGrow>true</CanGrow>
+                <Height>0.25in</Height>
+                <Value>=Sum(Fields!Visit_Count.Value)</Value>
+              </Textbox>
+            </ReportItems>
+            <DataSetName>DataSet1</DataSetName>
+            <Top>0.25in</Top>
+            <ZIndex>2</ZIndex>
+            <Width>5.5in</Width>
+            <Grouping Name="list1_Details_Group">
+              <GroupExpressions>
+                <GroupExpression>=Fields!Employee_Name.Value</GroupExpression>
+              </GroupExpressions>
+            </Grouping>
+            <Height>0.5in</Height>
+          </List>
+          <Textbox Name="Patient_Name">
+            <Left>0.125in</Left>
+            <rd:DefaultName>Patient_Name</rd:DefaultName>
+            <ZIndex>1</ZIndex>
+            <Width>2.375in</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.25in</Height>
+            <Value>=Fields!Patient_Name.Value</Value>
+          </Textbox>
+          <Line Name="line1">
+            <Left>0.125in</Left>
+            <Top>0.875in</Top>
+            <Width>5.625in</Width>
+            <Style>
+              <BorderStyle>
+                <Default>Solid</Default>
+              </BorderStyle>
+            </Style>
+            <Height>0in</Height>
+          </Line>
+        </ReportItems>
+        <DataSetName>emp_svc_cost</DataSetName>
+        <Top>0.0625in</Top>
+        <Grouping Name="list2_Details_Group">
+          <GroupExpressions>
+            <GroupExpression>=Fields!Patient_Name.Value</GroupExpression>
+          </GroupExpressions>
+        </Grouping>
+      </List>
+    </ReportItems>
+    <Height>1in</Height>
+  </Body>
+  <rd:ReportID>591c67b9-44c5-40ab-863c-3ab2ddf389c7</rd:ReportID>
+  <LeftMargin>1in</LeftMargin>
+  <DataSets>
+    <DataSet Name="emp_svc_cost">
+      <Query>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>emp_svc_cost</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@ServiceMonth">
+            <Value>=Parameters!ServiceMonth.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ServiceYear">
+            <Value>=Parameters!ServiceYear.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@BranchID">
+            <Value>=Parameters!BranchID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@EmployeeTblID">
+            <Value>=Parameters!EmployeeTblID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ServicesLogCtgryID">
+            <Value>=Parameters!ServicesLogCtgryID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <DataSourceName>Pro_SSRS</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="PatID">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>PatID</DataField>
+        </Field>
+        <Field Name="Patient_Name">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Patient Name</DataField>
+        </Field>
+        <Field Name="BranchName">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>BranchName</DataField>
+        </Field>
+        <Field Name="EmployeeID">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>EmployeeID</DataField>
+        </Field>
+        <Field Name="Employee_Name">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Employee Name</DataField>
+        </Field>
+        <Field Name="EmployeeClassID">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>EmployeeClassID</DataField>
+        </Field>
+        <Field Name="Service_Type">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Service Type</DataField>
+        </Field>
+        <Field Name="Estimated_Cost">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>Estimated Cost</DataField>
+        </Field>
+        <Field Name="Visit_Count">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>Visit_Count</DataField>
+        </Field>
+        <Field Name="Diagnosis">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Diagnosis</DataField>
+        </Field>
+        <Field Name="Month">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Month</DataField>
+        </Field>
+        <Field Name="Year">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>Year</DataField>
+        </Field>
+        <Field Name="ServiceTypeID">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ServiceTypeID</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Width>6.25in</Width>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <Language>en-US</Language>
+  <TopMargin>1in</TopMargin>
+</Report>

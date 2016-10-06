@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2003/10/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <PageHeader>
+    <ReportItems>
+      <Textbox Name="textbox18">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <rd:DefaultName>textbox18</rd:DefaultName>
+        <Width>4.125in</Width>
+        <CanGrow>true</CanGrow>
+        <Value>Opportunities W/O Activity</Value>
+      </Textbox>
+    </ReportItems>
+    <PrintOnLastPage>true</PrintOnLastPage>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <Style />
+    <Height>0.25in</Height>
+  </PageHeader>
+  <RightMargin>0.5in</RightMargin>
+  <Body>
+    <ReportItems>
+      <Table Name="table2">
+        <Height>0.25in</Height>
+        <Style />
+        <Header>
+          <TableRows>
+            <TableRow>
+              <Height>0.125in</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox6">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontSize>8pt</FontSize>
+                        <Color>Gray</Color>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>700</FontWeight>
+                      </Style>
+                      <ZIndex>7</ZIndex>
+                      <rd:DefaultName>textbox6</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox9">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontSize>8pt</FontSize>
+                        <Color>Gray</Color>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>700</FontWeight>
+                      </Style>
+                      <ZIndex>6</ZIndex>
+                      <rd:DefaultName>textbox9</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox3">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontSize>8pt</FontSize>
+                        <Color>Gray</Color>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>700</FontWeight>
+                      </Style>
+                      <ZIndex>5</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Name</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox5">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Right</TextAlign>
+                        <Color>Gray</Color>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>700</FontWeight>
+                      </Style>
+                      <ZIndex>4</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Last Activity</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+          <RepeatOnNewPage>true</RepeatOnNewPage>
+        </Header>
+        <DataSetName>Activities</DataSetName>
+        <Top>0.125in</Top>
+        <TableGroups>
+          <TableGroup>
+            <Header>
+              <TableRows>
+                <TableRow>
+                  <Height>0.125in</Height>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Image Name="image1">
+                          <ZIndex>3</ZIndex>
+                          <Action>
+                            <Hyperlink>="http://hwcs03/Activities/Phone/edit.aspx"</Hyperlink>
+                          </Action>
+                          <Source>Embedded</Source>
+                          <Style>
+                            <BorderColor>
+                              <Default>=iif(RowNumber(Nothing) mod 2, "LightSteelBlue", "White")</Default>
+                            </BorderColor>
+                          </Style>
+                          <Value>ico_32_137</Value>
+                          <Sizing>Fit</Sizing>
+                        </Image>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Image Name="image2">
+                          <ZIndex>2</ZIndex>
+                          <Action>
+                            <Hyperlink>="http://hwcs03/Activities/Email/edit.aspx"</Hyperlink>
+                          </Action>
+                          <Source>Embedded</Source>
+                          <Style>
+                            <BorderColor>
+                              <Default>=iif(RowNumber(Nothing) mod 2, "LightSteelBlue", "White")</Default>
+                            </BorderColor>
+                          </Style>
+                          <Value>ico_32_138</Value>
+                          <Sizing>Fit</Sizing>
+                        </Image>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="Name">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <TextDecoration>Underline</TextDecoration>
+                            <BorderColor>
+                              <Default>=iif(RowNumber(Nothing) mod 2, "LightSteelBlue", "White")</Default>
+                            </BorderColor>
+                            <FontSize>8pt</FontSize>
+                            <Color>DarkRed</Color>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                          </Style>
+                          <ZIndex>1</ZIndex>
+                          <rd:DefaultName>Name</rd:DefaultName>
+                          <Action>
+                            <Hyperlink>=IIF(Fields!ObjectName.Value="Lead","http://hwcs03/SFA/leads/edit.aspx?id={"&amp; Fields!ID.Value &amp;"}","http://hwcs03/SFA/opps/edit.aspx?id={"&amp; Fields!ID.Value &amp;"}")</Hyperlink>
+                          </Action>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!Name.Value</Value>
+                          <ToolTip>Open CRM Lead or Opportunity</ToolTip>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="CreatedOn">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <TextDecoration>Underline</TextDecoration>
+                            <BorderColor>
+                              <Default>=iif(RowNumber(Nothing) mod 2, "LightSteelBlue", "White")</Default>
+                            </BorderColor>
+                            <FontSize>8pt</FontSize>
+                            <Color>DarkRed</Color>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                          </Style>
+                          <rd:DefaultName>CreatedOn</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value>=First(Fields!CreatedOn.Value)</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                </TableRow>
+              </TableRows>
+              <RepeatOnNewPage>true</RepeatOnNewPage>
+            </Header>
+            <Grouping Name="table2_Group1">
+              <Label>=Fields!Name.Value</Label>
+              <GroupExpressions>
+                <GroupExpression>=Fields!Name.Value</GroupExpression>
+              </GroupExpressions>
+            </Grouping>
+            <Sorting>
+              <SortBy>
+                <SortExpression>=Fields!Name.Value</SortExpression>
+                <Direction>Ascending</Direction>
+              </SortBy>
+            </Sorting>
+          </TableGroup>
+        </TableGroups>
+        <TableColumns>
+          <TableColumn>
+            <Width>0.25in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.25in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>3.125in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.875in</Width>
+          </TableColumn>
+        </TableColumns>
+      </Table>
+    </ReportItems>
+    <Style />
+    <Height>0.5in</Height>
+  </Body>
+  <TopMargin>1in</TopMargin>
+  <DataSources>
+    <DataSource Name="HealthWare_Corporation_MSCRM">
+      <rd:DataSourceID>9d5e99c8-35a6-41a5-9b07-1af2f1eece7a</rd:DataSourceID>
+      <DataSourceReference>HealthWare_Corporation_MSCRM</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <Code>Function StripTags(ByVal HTML As String) As String
+    ' Removes tags from passed HTML
+    Dim objRegEx As _
+        System.Text.RegularExpressions.Regex
+    Dim sb = new System.Text.StringBuilder(objRegEx.Replace(HTML, "&lt;[^&gt;]*&gt;", ""))
+    sb.Replace("&amp;nbsp;"," ")
+    sb.Replace("&amp;lt;","&lt;")
+    sb.Replace("&amp;gt;","&gt;")
+    sb.Replace("&amp;quot;","""")
+    sb.Replace("&amp;amp;","&amp;")
+    sb.Replace("&amp;#8220;","""")
+    sb.Replace("&amp;#8221;","""")
+    sb.Replace("&amp;#8226;", "-")
+    sb.Replace("&amp;#8211;","-")
+    sb.Replace("&amp;#8217;","'")
+    sb.Replace("&amp;#8212;",",")
+    sb.Replace("&amp;#167;","")
+    sb.Replace("&amp;#x000D","")
+    sb.Replace("&amp;#x000A","")
+    Return sb.ToString()
+End Function</Code>
+  <Width>5.5in</Width>
+  <DataSets>
+    <DataSet Name="Activities">
+      <Fields>
+        <Field Name="ObjectName">
+          <DataField>ObjectName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="A_ID">
+          <DataField>A_ID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ID">
+          <DataField>ID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ContactId">
+          <DataField>ContactId</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="CreatedOn">
+          <DataField>CreatedOn</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Subject">
+          <DataField>Subject</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CreatedByName">
+          <DataField>CreatedByName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StatusCode">
+          <DataField>StatusCode</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Activity_Status">
+          <DataField>Activity_Status</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>HealthWare_Corporation_MSCRM</DataSourceName>
+        <CommandText>SELECT     'Opportunity' as ObjectName,CAST(Activity.ActivityID AS nvarchar(80)) AS A_ID, CAST(OpportunityBase.OpportunityId AS nvarchar(80)) AS ID, OpportunityBase.Name, 
+                        OpportunityBase.ContactId, 
+                      Activity.CreatedOn, Activity.Subject, Activity.CreatedByName, OpportunityBase.StatusCode, Activity.StatusCode AS Activity_Status, 
+                      Activity.Description
+FROM         OpportunityBase Left OUTER JOIN
+                     Activity ON activity.objectid = opportunitybase.opportunityid  
+Where ActivityID is null or Activity.CreatedOn &lt; getdate() - 30 and
+    (OpportunityBase.StatusCode = @statuscode)</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@statuscode">
+            <Value>=Parameters!statuscode.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+    <DataSet Name="Status">
+      <Fields>
+        <Field Name="statuscode">
+          <DataField>statuscode</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>HealthWare_Corporation_MSCRM</DataSourceName>
+        <CommandText>select distinct statuscode from opportunitybase</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+    <DataSet Name="User">
+      <Fields>
+        <Field Name="LastName">
+          <DataField>LastName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DomainName">
+          <DataField>DomainName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>HealthWare_Corporation_MSCRM</DataSourceName>
+        <CommandText>select distinct LastName,DomainName from systemuserbase</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="Activity_Status">
+          <DataField>Activity Status</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>HealthWare_Corporation_MSCRM</DataSourceName>
+        <CommandText>select  distinct isnull(statuscode,1) as [Activity Status] from activity
+UNION
+Select null</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <EmbeddedImages>
+    <EmbeddedImage Name="ico_32_137">
+      <MIMEType>image/gif</MIMEType>
+      <ImageData>R0lGODlhIAAgAOYAAAAAAP//////mf/MAP/+mf79mP//ms3NzK2trP78l/36nP381vLshvv1kPv2l/z4mv70gf35x/vvivLoiurgjPDkg/HmnPvyrP3kW/zmbfzqdfzrg+vXcv/MAv/OB/7QGP/WKP7ZNPTOOP3cRtnGd+TWl6ekmL69uf/IAvnFAuu5A/bEBP3KBf3MDenBK+zGOOvJSP3bV+DWsfzECfK7DtmrDvbBEuq4F/3IHue6LOe8Nb+eOcuuTZKCUdbTycmXBtWpMfvKR/7cfLynbby2pv23C6x9C+arH/3DKrOMLMiQEt+lKMGTKKd+JsKhU6uOSsevesa7otuYC76CDpttDdSYG/y3JaB1G/i6N5l0K+63S4x5UbKZadbEn9rNs3dyaOngzfHu6JmYlt7d29fW1J9pAvqyMaWZg/Dp3L55DMuEEfqjFrh6FvuqJo6Cbq1rB9WKF/j07unl38nHxOOQG+2XIvufJcl1EvqSJeVzHfyBJfX19fLy8u3t7eTk5P///yH5BAEAAH8ALAAAAAAgACAAAAf/gH+Cg4SFhoeIiYqLjI2OhWheUFBdXmGPh2BDSTwkJSUyJDtccph/mpwUERELC6sXIy9JXnuMcV1NOxQXrBEXGxoaIiIbIzRXB7WJuDy8rBcZMUFISRhLNhcxRWlcfolOO7yuwBBBeHVqZRJaSC0za2lbc3yHUM2uGiNYTLFvVzwTHjiQkKHKnTtu5h2qhiHDCDN44JTJwIGDggcNJGywUCIGnC1iyBySAWRECAwacKiho8WBAYwbJmgYcuIECRFGzngzBOXHhxa8QEihI2EgMBNjTvBwwwUIixRGotArBKWKEisgRsxQo0ZCBRlkSvQQc0aHjRslfMCAKrWQFyV0/9LAoaPmDZwYHL4gEJMDiA4OMGq4QcBlANupg6Kw0ZOncRo7ZkYAcXLkBYoec064YMLjhogWKqi0HdTnRJY0apS0aWMHyYcbUchAEczl
+RgcWSKMMUIEM8Z89Q1TgsGKFtR0UK76YOJNiBowSJFqAPENjd5YxhaL8wIGkuB08a1DUAEJDxIAtRBDkWHHERocQEJ6c6EMoThMa3Vd/LzLgBhEyJKjwRGcDdDACBAYI8AQC9BEyRhNHENcGHhQi94UYXKzAwgAtYNCAACAqyKAhPkDoHR56rDFADUvQ0MIHGBQQogAN8JDFiIXs4cMTdbCGoh78DQBCBgTMWOMVIM2HyG4YT8Dx3Y/wFRkiAzsgKQYCB+yEiB9nsEGhHnpIIKUAVFIBEgJzjOEbInIQcQUdYApRJJVZnJnmmoqEMUcWd+ghBJ1uXDmHH3gysgeTbzCRRaBY+qGMKYP4QcQZV2b5KKSE9DHGGH1ciumnoDISCAA7</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="ico_32_138">
+      <MIMEType>image/gif</MIMEType>
+      <ImageData>R0lGODlhIAAgAOYAAAAAAP///5mZzJmZmeXl5dXy/K6u1JaWwZKSta+v1bW12Ly826amwMLC3pGRpcrK49vb65KSm+Li7vHx+PDw9pSUlp6fz5qdz6Kl0qSp1Zyj1KCn1auy2aev2KGr2J2q2q653rK83p6v3p+w3rG+4b3J5J625KG35LXE47nH5KK+6LfM6rzP6rvN6aLC7MbV6qXI76fM8rLS8svc7bvX8qjW+6nT+L3b9arY+63Z+67a+7Hb+7Xb+Lfc+Lre+c3h8bHc+7Pd+7Xe+7bf+7ng+7rh+8Di+bfg+7vi+7zi+73j/L/k/MDl/MXl+cHm/MPn/MTn/MXo/Mbp/M3o+NTp9cfq/Mnr/Mrr/Mvs/Mzt/NHs+c7u/NHv/Njt9tHw/NPx/NTx/NXv+dfz/Nf0/Nj0/Nr1/Nv2/Nz2/N/4/OH5/OH6/OL6/OT7/OX8/PX19fLy8u/v7+vr6+jo6OTk5OLi4t7e3tra2tPT08jIyMDAwLW1taysrKSkpJ2dnZubm////yH5BAEAAH8ALAAAAAAgACAAAAf/gH+Cg4SFhoeIiYqLjI2Oj38UEA8KcJCFFBIPCwYaHx8WGHiWjZmbnR8nLjE1ODYeVBx8BImaDQkbqautOTo6O8AbM20cA7SCEw+3uScqMDg5vTtAQUJDR0RFPhsvbGwhxoMPHBcw0dPV1tlISktLTE5PHi9r9SXhgg0/XRweMkRIkrSD9wRKFClVrFwBUSKNwzT3jv1Z8MPhDw4cbhxMeAVLlixbuHABEQKNSZMRByU4aXIGBhJTQnr5AqaAGDEkQpzZyTOlIAM8d5o58yIDijBlygwlGsKM06dmUuD7YyCp1aRkwqTA8MKhmhcCWly1KlWiATJo06oN0YFr0Skd/1CMuUm37CADYgro3as3RIgxU0Bk0PLFC4kOWviimGrgi+PHjlmAKOyFy5YtWbBcWZHhx8wvi816GS1SJIsMmLFgsVKlipQoUJ7Q2MBC
+ZOi7l3NvaZGhiWvYT5wwcackSZEeHkhsuf3z40csKzYYEU48CRIiRIYMERIEyI4THUgwtkLeymwf1rFr5+7dV7QYKkZcEODHrJT7Nzbw2N59h/scOMTgggkfCHAAAg5EUMEectwFBRQ0WBCDf9HgUIMNMJzwwXwIJjgAH3rkcccchBjgBA0axGBhDfCJoIGBCCrYxx554GEHAXG8YYgBN2jgwoAFCtBhBR/qgccddMQBhzUbihiwgQAwJljBjDXWIQccOjqyAAMOVOAHiEcmueQlgrxxx5FWYknmIXCMueabcMYpJySBAAA7</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="ico_18_quota">
+      <MIMEType>image/gif</MIMEType>
+      <ImageData>R0lGODlhEgASANUAAIOD1YqKj8XFxzY3abCx0GhqiKapwpmduXN6mIiOqX+Fm8nO3Mrb59rn8OLs8+jx9vX5+uz07mWJa2F1Y7i6uE2OSw9xC5GyjzqKMkycPlysSGy2VH7AY4rHb1ZuSZ/SgqWtmNfYx29mFdPOvMu/pePd0PDKe4yAaeKxV9aoWLiWVu3Tpr+1oqp6KcmSOP/DXNy2dr58GMqFIeOfOf+3UdmOKv+sRv+hO/eVL+jo6OLi4tzc3Kqqqv///wAAAAAAACH5BAEAAD0ALAAAAAASABIAAAbnwF6vpCqqRjmhcjlspVYrWIulYy5VLtjKhHK1BElrryWryVzmGGgn7slor3h8dhK0XTaaXk8Hi1U3NoKCNScUYUwkMjeMjDEBflY5LTiVODUeBQkHBwYEBABsPRciMTIxIgoODg8PEAYCBBSjGRkgIyESCQ0NrAYFEAQ8FBgdHxgRELq8DQYDCw/CFRscHR0VEBUJCZoDCK0GPBka1B0ZFxgKCAPsDL48FRjjGxoW6QwFA7u9Bzw7FxI8eJhAEAEDBgkW8ELII8cOARQiUliHAIECdQUKBJjVI4dDHTl0hOBBsiQFO0EAADs=</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <LeftMargin>0.5in</LeftMargin>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <PageHeight>8.5in</PageHeight>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <PageWidth>11in</PageWidth>
+  <rd:ReportID>56197869-c103-4a98-8a4d-b716363050ae</rd:ReportID>
+  <BottomMargin>1in</BottomMargin>
+  <ReportParameters>
+    <ReportParameter Name="statuscode">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>=Nothing</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>statuscode</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>1</Value>
+            <Label>Active</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>4</Value>
+            <Label>Closed</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+  </ReportParameters>
+  <Language>en-US</Language>
+</Report>

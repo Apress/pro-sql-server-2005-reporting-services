@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmR3ZD0iaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS9EYXRhV2FyZWhvdXNlL0Rlc2lnbmVyLzEuMCI+DQogIDxFbmFibGVkPmZhbHNlPC9FbmFibGVkPg0KICA8UHJvamVjdE5hbWU+PC9Qcm9qZWN0TmFtZT4NCiAgPEF1eFBhdGg+PC9BdXhQYXRoPg0KICA8TG9jYWxQYXRoPjwvTG9jYWxQYXRoPg0KICA8UHJvdmlkZXI+PC9Qcm92aWRlcj4NCjwvU291cmNlQ29udHJvbEluZm8+</State>
+  <DataSources>
+    <ProjectItem>
+      <Name>PatRef_DS.rds</Name>
+      <FullPath>PatRef_DS.rds</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Pro_SSRS.rds</Name>
+      <FullPath>Pro_SSRS.rds</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>RSExecutionLog.rds</Name>
+      <FullPath>RSExecutionLog.rds</FullPath>
+    </ProjectItem>
+  </DataSources>
+  <Reports>
+    <ProjectItem>
+      <Name>AR Reconciliation.rdl</Name>
+      <FullPath>AR Reconciliation.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Average Referral To Admission.rdl</Name>
+      <FullPath>Average Referral To Admission.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Blank_Start.rdl</Name>
+      <FullPath>Blank_Start.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Chart Start.rdl</Name>
+      <FullPath>Chart Start.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Chart.rdl</Name>
+      <FullPath>Chart.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>columns.rdl</Name>
+      <FullPath>columns.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Daily Activity.rdl</Name>
+      <FullPath>Daily Activity.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Employee Cost Report_Wizard.rdl</Name>
+      <FullPath>Employee Cost Report_Wizard.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>EmployeeListing.rdl</Name>
+      <FullPath>EmployeeListing.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>EmployeeListing_Start.rdl</Name>
+      <FullPath>EmployeeListing_Start.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>EmployeeServiceCost.rdl</Name>
+      <FullPath>EmployeeServiceCost.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>EmployeeServiceCost_DocumentMap.rdl</Name>
+      <FullPath>EmployeeServiceCost_DocumentMap.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>EmployeeServiceCost_Format.rdl</Name>
+      <FullPath>EmployeeServiceCost_Format.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>EmployeeServiceCost_InteractiveSort.rdl</Name>
+      <FullPath>EmployeeServiceCost_InteractiveSort.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>EmployeeServiceCost_MVP.rdl</Name>
+      <FullPath>EmployeeServiceCost_MVP.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>EmployeeServiceCost_Parameters.rdl</Name>
+      <FullPath>EmployeeServiceCost_Parameters.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>EmployeeServiceCost_ServiceDetail.rdl</Name>
+      <FullPath>EmployeeServiceCost_ServiceDetail.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>EmployeeServiceCost_SP.rdl</Name>
+      <FullPath>EmployeeServiceCost_SP.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>EmployeeServiceCost_Start.rdl</Name>
+      <FullPath>EmployeeServiceCost_Start.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>EmployeeServiceCost_Start_DocumentMap.rdl</Name>
+      <FullPath>EmployeeServiceCost_Start_DocumentMap.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>EmployeeServiceCost_Start_Format.rdl</Name>
+      <FullPath>EmployeeServiceCost_Start_Format.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>EmployeeServiceCost_Start_Subtotals.rdl</Name>
+      <FullPath>EmployeeServiceCost_Start_Subtotals.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>EmployeeServiceCost_Start_Table.rdl</Name>
+      <FullPath>EmployeeServiceCost_Start_Table.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>EmployeeServiceCost_Start_Visibility.rdl</Name>
+      <FullPath>EmployeeServiceCost_Start_Visibility.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>EmployeeServiceCost_Subtotals.rdl</Name>
+      <FullPath>EmployeeServiceCost_Subtotals.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>EmployeeServiceCost_Visibility.rdl</Name>
+      <FullPath>EmployeeServiceCost_Visibility.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Execution Summary.rdl</Name>
+      <FullPath>Execution Summary.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Hw Reports.rdl</Name>
+      <FullPath>Hw Reports.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Image Start.rdl</Name>
+      <FullPath>Image Start.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Image.rdl</Name>
+      <FullPath>Image.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Lead Conversion Report.rdl</Name>
+      <FullPath>Lead Conversion Report.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>List Start.rdl</Name>
+      <FullPath>List Start.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Lists.rdl</Name>
+      <FullPath>Lists.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Matrix Start.rdl</Name>
+      <FullPath>Matrix Start.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Matrix.rdl</Name>
+      <FullPath>Matrix.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>MDX.rdl</Name>
+      <FullPath>MDX.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Opportunities Without Activitites.rdl</Name>
+      <FullPath>Opportunities Without Activitites.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Opportunity and Lead Activitites.rdl</Name>
+      <FullPath>Opportunity and Lead Activitites.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Patient Face Sheet.rdl</Name>
+      <FullPath>Patient Face Sheet.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Patient Receritifcation Listing.rdl</Name>
+      <FullPath>Patient Receritifcation Listing.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Patient Referral.rdl</Name>
+      <FullPath>Patient Referral.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Rectangle Start.rdl</Name>
+      <FullPath>Rectangle Start.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Rectangle.rdl</Name>
+      <FullPath>Rectangle.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Referral To Admission Chart.rdl</Name>
+      <FullPath>Referral To Admission Chart.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Report Execution Audit.rdl</Name>
+      <FullPath>Report Execution Audit.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Report Execution Log.rdl</Name>
+      <FullPath>Report Execution Log.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Report1.rdl</Name>
+      <FullPath>Report1.rdl</FullPath>
+    </ProjectItem>
+    <ResourceProjectItem>
+      <Name>RSExecutionLog_Update.dts</Name>
+      <FullPath>RSExecutionLog_Update.dts</FullPath>
+      <MimeType>application/octet-stream</MimeType>
+    </ResourceProjectItem>
+    <ProjectItem>
+      <Name>Sales_Projections_Chart.rdl</Name>
+      <FullPath>Sales_Projections_Chart.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Table Start.rdl</Name>
+      <FullPath>Table Start.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Table.rdl</Name>
+      <FullPath>Table.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Daily Activity CH 9.rdl</Name>
+      <FullPath>Daily Activity CH 9.rdl</FullPath>
+    </ProjectItem>
+  </Reports>
+  <Configurations>
+    <Configuration>
+      <Name>Debug</Name>
+      <Platform>Win32</Platform>
+      <Options>
+        <TargetServerURL>http://localhost/reportserver</TargetServerURL>
+        <TargetFolder>Patient Documentation</TargetFolder>
+      </Options>
+    </Configuration>
+    <Configuration>
+      <Name>DebugLocal</Name>
+      <Platform>Win32</Platform>
+      <Options>
+        <TargetFolder>Pro_SRS</TargetFolder>
+      </Options>
+    </Configuration>
+    <Configuration>
+      <Name>Production</Name>
+      <Platform>Win32</Platform>
+      <Options>
+        <TargetFolder>Pro_SRS</TargetFolder>
+      </Options>
+    </Configuration>
+  </Configurations>
+</Project>

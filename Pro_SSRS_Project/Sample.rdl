@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <InteractiveHeight>11in</InteractiveHeight>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ReportItems>
+      <Textbox Name="textbox1">
+        <Width>5.75in</Width>
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Top>1.125in</Top>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingTop>2pt</PaddingTop>
+          <FontSize>28pt</FontSize>
+          <Color>Red</Color>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <Left>1in</Left>
+        <CanGrow>true</CanGrow>
+        <Height>0.625in</Height>
+        <Value>Sample IDE Configuration.</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>4.625in</Height>
+    <Style />
+  </Body>
+  <LeftMargin>1in</LeftMargin>
+  <BottomMargin>1in</BottomMargin>
+  <rd:ReportID>2de5c119-a734-46ed-b861-f86111b6ccfa</rd:ReportID>
+  <RightMargin>1in</RightMargin>
+  <Width>9.875in</Width>
+  <Language>en-US</Language>
+  <TopMargin>1in</TopMargin>
+</Report>

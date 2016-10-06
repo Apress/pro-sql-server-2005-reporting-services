@@ -1,0 +1,840 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <InteractiveHeight>11in</InteractiveHeight>
+  <PageWidth>11in</PageWidth>
+  <rd:ReportID>bb837f8c-970b-47a2-ad22-1acfc63d5d85</rd:ReportID>
+  <ReportParameters>
+    <ReportParameter Name="GroupBy">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>owneridname</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Group By</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>leadsourcecodename</Value>
+            <Label>Lead Source</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>owneridname</Value>
+            <Label>Sales Person</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>address1_stateorprovince</Value>
+            <Label>State/Province</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <DataSources>
+    <DataSource Name="Adventure_Works_Cycle_MSCRM">
+      <rd:DataSourceID>bbc7b505-dea9-4803-8774-d675a95ff1b5</rd:DataSourceID>
+      <DataSourceReference>Adventure_Works_Cycle_MSCRM</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <rd:GridSpacing>0.03125in</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ReportItems>
+      <Table Name="table1">
+        <TableGroups>
+          <TableGroup>
+            <Header>
+              <TableRows>
+                <TableRow>
+                  <Height>0.25in</Height>
+                  <TableCells>
+                    <TableCell>
+                      <ColSpan>8</ColSpan>
+                      <ReportItems>
+                        <Textbox Name="textbox5">
+                          <rd:DefaultName>textbox5</rd:DefaultName>
+                          <ZIndex>8</ZIndex>
+                          <Style>
+                            <FontWeight>700</FontWeight>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <FontFamily>Tahoma</FontFamily>
+                            <PaddingTop>2pt</PaddingTop>
+                            <FontSize>13pt</FontSize>
+                            <BackgroundColor>#1f3c62</BackgroundColor>
+                            <Color>White</Color>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingRight>2pt</PaddingRight>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>= Parameters!GroupBy.Label &amp; ": " &amp; Fields(Parameters!GroupBy.Value).Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                </TableRow>
+              </TableRows>
+              <RepeatOnNewPage>true</RepeatOnNewPage>
+            </Header>
+            <Grouping Name="table1_Group1">
+              <GroupExpressions>
+                <GroupExpression>=Fields(Parameters!GroupBy.Value).value</GroupExpression>
+              </GroupExpressions>
+            </Grouping>
+            <Sorting>
+              <SortBy>
+                <SortExpression>=Fields(Parameters!GroupBy.Value).Value</SortExpression>
+                <Direction>Ascending</Direction>
+              </SortBy>
+            </Sorting>
+          </TableGroup>
+        </TableGroups>
+        <DataSetName>Leads</DataSetName>
+        <Top>4.5625in</Top>
+        <ZIndex>1</ZIndex>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <Height>0.25in</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="companyname">
+                      <rd:DefaultName>companyname</rd:DefaultName>
+                      <ZIndex>7</ZIndex>
+                      <Style>
+                        <PaddingLeft>4pt</PaddingLeft>
+                        <FontFamily>Tahoma</FontFamily>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingTop>2pt</PaddingTop>
+                        <FontSize>8pt</FontSize>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                          <Top>Solid</Top>
+                        </BorderStyle>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!companyname.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="leadsourcecodename">
+                      <rd:DefaultName>leadsourcecodename</rd:DefaultName>
+                      <ZIndex>6</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontFamily>Tahoma</FontFamily>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingTop>2pt</PaddingTop>
+                        <FontSize>8pt</FontSize>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                          <Top>Solid</Top>
+                        </BorderStyle>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!leadsourcecodename.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="estimatedclosedate">
+                      <rd:DefaultName>estimatedclosedate</rd:DefaultName>
+                      <ZIndex>5</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontFamily>Tahoma</FontFamily>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingTop>2pt</PaddingTop>
+                        <FontSize>8pt</FontSize>
+                        <Format>d</Format>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                          <Top>Solid</Top>
+                        </BorderStyle>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!estimatedclosedate.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="estimatedvalue">
+                      <rd:DefaultName>estimatedvalue</rd:DefaultName>
+                      <ZIndex>4</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontFamily>Tahoma</FontFamily>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingTop>2pt</PaddingTop>
+                        <FontSize>8pt</FontSize>
+                        <Format>C0</Format>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                          <Top>Solid</Top>
+                        </BorderStyle>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!estimatedvalue.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="owneridname">
+                      <rd:DefaultName>owneridname</rd:DefaultName>
+                      <ZIndex>3</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontFamily>Tahoma</FontFamily>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingTop>2pt</PaddingTop>
+                        <FontSize>8pt</FontSize>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                          <Top>Solid</Top>
+                        </BorderStyle>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!owneridname.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="address1_city">
+                      <rd:DefaultName>address1_city</rd:DefaultName>
+                      <ZIndex>2</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontFamily>Tahoma</FontFamily>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingTop>2pt</PaddingTop>
+                        <FontSize>8pt</FontSize>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                          <Top>Solid</Top>
+                        </BorderStyle>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!address1_city.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="address1_stateorprovince">
+                      <rd:DefaultName>address1_stateorprovince</rd:DefaultName>
+                      <ZIndex>1</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontFamily>Tahoma</FontFamily>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingTop>2pt</PaddingTop>
+                        <FontSize>8pt</FontSize>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                          <Top>Solid</Top>
+                        </BorderStyle>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!address1_stateorprovince.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="emailaddress1">
+                      <rd:DefaultName>emailaddress1</rd:DefaultName>
+                      <Action>
+                        <Hyperlink>mailto:someone@microsoft.com</Hyperlink>
+                      </Action>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <TextDecoration>Underline</TextDecoration>
+                        <FontFamily>Tahoma</FontFamily>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingTop>2pt</PaddingTop>
+                        <FontSize>8pt</FontSize>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                          <Top>Solid</Top>
+                        </BorderStyle>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!emailaddress1.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+          <Sorting>
+            <SortBy>
+              <SortExpression>=Fields!companyname.Value</SortExpression>
+              <Direction>Ascending</Direction>
+            </SortBy>
+          </Sorting>
+        </Details>
+        <Style />
+        <Header>
+          <TableRows>
+            <TableRow>
+              <Height>0.25in</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox19">
+                      <ZIndex>16</ZIndex>
+                      <Style>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontFamily>Verdana</FontFamily>
+                        <PaddingTop>2pt</PaddingTop>
+                        <BackgroundColor>#838383</BackgroundColor>
+                        <Color>White</Color>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>Company</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox20">
+                      <ZIndex>15</ZIndex>
+                      <Style>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontFamily>Verdana</FontFamily>
+                        <PaddingTop>2pt</PaddingTop>
+                        <BackgroundColor>#838383</BackgroundColor>
+                        <Color>White</Color>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>Lead Source</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox21">
+                      <ZIndex>14</ZIndex>
+                      <Style>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontFamily>Verdana</FontFamily>
+                        <PaddingTop>2pt</PaddingTop>
+                        <BackgroundColor>#838383</BackgroundColor>
+                        <Color>White</Color>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>Est Close</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox22">
+                      <ZIndex>13</ZIndex>
+                      <Style>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontFamily>Verdana</FontFamily>
+                        <PaddingTop>2pt</PaddingTop>
+                        <BackgroundColor>#838383</BackgroundColor>
+                        <TextAlign>Center</TextAlign>
+                        <Color>White</Color>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>Est Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox23">
+                      <ZIndex>12</ZIndex>
+                      <Style>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontFamily>Verdana</FontFamily>
+                        <PaddingTop>2pt</PaddingTop>
+                        <BackgroundColor>#838383</BackgroundColor>
+                        <Color>White</Color>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>Sales Rep</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox24">
+                      <ZIndex>11</ZIndex>
+                      <Style>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontFamily>Verdana</FontFamily>
+                        <PaddingTop>2pt</PaddingTop>
+                        <BackgroundColor>#838383</BackgroundColor>
+                        <Color>White</Color>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>City</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox25">
+                      <ZIndex>10</ZIndex>
+                      <Style>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontFamily>Verdana</FontFamily>
+                        <PaddingTop>2pt</PaddingTop>
+                        <BackgroundColor>#838383</BackgroundColor>
+                        <Color>White</Color>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>State</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox26">
+                      <ZIndex>9</ZIndex>
+                      <Style>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontFamily>Verdana</FontFamily>
+                        <PaddingTop>2pt</PaddingTop>
+                        <BackgroundColor>#838383</BackgroundColor>
+                        <Color>White</Color>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>Email</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+          <RepeatOnNewPage>true</RepeatOnNewPage>
+        </Header>
+        <TableColumns>
+          <TableColumn>
+            <Width>1.65625in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.125in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.6875in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.75in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.21875in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.03125in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.59375in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.5in</Width>
+          </TableColumn>
+        </TableColumns>
+      </Table>
+      <Chart Name="PercentLeads">
+        <Legend>
+          <Visible>true</Visible>
+          <Style>
+            <FontWeight>700</FontWeight>
+            <FontFamily>Tahoma</FontFamily>
+            <BorderStyle>
+              <Default>Solid</Default>
+            </BorderStyle>
+          </Style>
+          <Position>RightCenter</Position>
+        </Legend>
+        <CategoryAxis>
+          <Axis>
+            <Title />
+            <MajorGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </MajorGridLines>
+            <MinorGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </MinorGridLines>
+            <MajorTickMarks>Outside</MajorTickMarks>
+            <Min>0</Min>
+            <Visible>true</Visible>
+          </Axis>
+        </CategoryAxis>
+        <PointWidth>0</PointWidth>
+        <PlotArea>
+          <Style>
+            <BackgroundColor>LightGrey</BackgroundColor>
+          </Style>
+        </PlotArea>
+        <ThreeDProperties>
+          <Enabled>true</Enabled>
+          <Rotation>30</Rotation>
+          <Inclination>30</Inclination>
+          <Shading>Simple</Shading>
+          <WallThickness>50</WallThickness>
+        </ThreeDProperties>
+        <DataSetName>Leads</DataSetName>
+        <ValueAxis>
+          <Axis>
+            <Title />
+            <MajorGridLines>
+              <ShowGridLines>true</ShowGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </MajorGridLines>
+            <MinorGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </MinorGridLines>
+            <MajorTickMarks>Outside</MajorTickMarks>
+            <Min>0</Min>
+            <Margin>true</Margin>
+            <Visible>true</Visible>
+            <Scalar>true</Scalar>
+          </Axis>
+        </ValueAxis>
+        <Type>Pie</Type>
+        <Width>8.53125in</Width>
+        <Subtype>Exploded</Subtype>
+        <CategoryGroupings>
+          <CategoryGrouping>
+            <DynamicCategories>
+              <Grouping Name="GroupBy">
+                <GroupExpressions>
+                  <GroupExpression>=Fields(Parameters!GroupBy.Value).Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <Sorting>
+                <SortBy>
+                  <SortExpression>= sum(Fields!LeadCount.Value,"GroupBy")/sum( Fields!LeadCount.Value,"Leads")</SortExpression>
+                  <Direction>Ascending</Direction>
+                </SortBy>
+              </Sorting>
+              <Label />
+            </DynamicCategories>
+          </CategoryGrouping>
+        </CategoryGroupings>
+        <Palette>Default</Palette>
+        <ChartData>
+          <ChartSeries>
+            <DataPoints>
+              <DataPoint>
+                <DataValues>
+                  <DataValue>
+                    <Value>= sum(Fields!LeadCount.Value,"GroupBy")/sum( Fields!LeadCount.Value,"Leads")</Value>
+                  </DataValue>
+                </DataValues>
+                <DataLabel>
+                  <Style>
+                    <FontWeight>700</FontWeight>
+                    <FontFamily>Verdana</FontFamily>
+                    <FontSize>8pt</FontSize>
+                    <Format>P1</Format>
+                  </Style>
+                  <Value>= sum(Fields!LeadCount.Value, "GroupBy") /sum( Fields!LeadCount.Value,"Leads")</Value>
+                  <Position>Bottom</Position>
+                  <Visible>true</Visible>
+                </DataLabel>
+                <Style />
+                <Marker>
+                  <Size>6pt</Size>
+                </Marker>
+              </DataPoint>
+            </DataPoints>
+          </ChartSeries>
+        </ChartData>
+        <Style>
+          <BackgroundColor>LightGrey</BackgroundColor>
+        </Style>
+        <Title>
+          <Style>
+            <FontWeight>700</FontWeight>
+            <FontFamily>Tahoma</FontFamily>
+            <FontSize>14pt</FontSize>
+          </Style>
+        </Title>
+        <Height>4.5625in</Height>
+      </Chart>
+    </ReportItems>
+    <Height>5.3125in</Height>
+    <Style />
+  </Body>
+  <PageHeader>
+    <ReportItems>
+      <Textbox Name="textbox1">
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Top>0.0625in</Top>
+        <Width>8.53125in</Width>
+        <Style>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontFamily>Tahoma</FontFamily>
+          <PaddingTop>2pt</PaddingTop>
+          <FontSize>14pt</FontSize>
+          <TextAlign>Center</TextAlign>
+          <Color>Yellow</Color>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.34375in</Height>
+        <Value>="Percent of Leads By " &amp; Parameters!GroupBy.Label</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>0.46875in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <Style>
+      <BackgroundColor>#738cad</BackgroundColor>
+    </Style>
+  </PageHeader>
+  <DataSets>
+    <DataSet Name="Leads">
+      <Fields>
+        <Field Name="leadid">
+          <DataField>LeadId</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="companyname">
+          <DataField>CompanyName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="address1_city">
+          <DataField>Address1_City</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="address1_stateorprovince">
+          <DataField>Address1_StateOrProvince</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="address1_postalcode">
+          <DataField>Address1_PostalCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="address1_telephone1">
+          <DataField>Address1_Telephone1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="contactidname">
+          <DataField>ContactIdName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="emailaddress1">
+          <DataField>EMailAddress1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="estimatedvalue">
+          <DataField>EstimatedValue</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="LeadSourceCode">
+          <DataField>LeadSourceCode</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="leadsourcecodename">
+          <DataField>leadsourcecodename</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="owneridname">
+          <DataField>OwnerIdName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="estimatedclosedate">
+          <DataField>EstimatedCloseDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="LeadCount">
+          <DataField>LeadCount</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>Adventure_Works_Cycle_MSCRM</DataSourceName>
+        <CommandText>
+        SELECT     
+			LeadId, 
+			CompanyName, 
+			Address1_City, 
+			Address1_StateOrProvince, 
+			Address1_PostalCode, 
+			Address1_Telephone1, 
+			ContactIdName, 
+			EMailAddress1, 
+            EstimatedValue, 
+            LeadSourceCode, 
+		CASE LeadSourceCode 
+			WHEN 1 THEN 'Advertisement' 
+			WHEN 2 THEN 'Employee Referral' 
+			WHEN 3 THEN 'External Referral'
+			WHEN 4 THEN 'Partner'
+			WHEN 5 THEN 'Public Relations'
+			WHEN 6 THEN 'Seminar'
+			WHEN 7 THEN 'Trade Show'
+			WHEN 8 THEN 'Web' 
+			WHEN 9 THEN 'Word of Mouth'
+			WHEN 10 THEN 'Other' 
+			WHEN 11 THEN 'Other'
+		END AS leadsourcecodename,
+ 		OwnerIdName, 
+		EstimatedCloseDate, 1 AS LeadCount
+FROM         Lead
+ORDER BY CompanyName</CommandText>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Author>Microsoft</Author>
+  <Code>Function translateLeadSourceCode(code as string)
+	if code = "1" then
+	return "Advertisement"
+	else if code = "2" then
+	return "Employee Referral"
+	else if code = "3" then
+	return "External Referral"
+	else if code = "4" then
+	return ""
+	else if code = "5" then
+	return ""
+	else if code = "6" then
+	return ""
+	else if code = "7" then
+	return ""
+	else if code = "8" then
+	return "Web"
+	else if code = "9" then
+	return ""
+	else if code = "10" then
+	return "Other"
+	else if code = "11" then
+	return ""
+	End If
+End Function</Code>
+  <Width>8.5625in</Width>
+  <Description>The Lead Summary is a report that displays a summarized list and chart of lead information.  This report includes a chart to show the percentage of leads by salesperson, lead source, or state/province followed by a table which displays a detailed list of leads grouped by the selected parameter.</Description>
+  <PageFooter>
+    <ReportItems>
+      <Textbox Name="Field12">
+        <Left>5in</Left>
+        <Top>0.1875in</Top>
+        <ZIndex>1</ZIndex>
+        <Width>3.5in</Width>
+        <Style>
+          <FontWeight>700</FontWeight>
+          <FontFamily>Verdana</FontFamily>
+          <FontSize>8pt</FontSize>
+          <LineHeight>13pt</LineHeight>
+          <TextAlign>Right</TextAlign>
+          <Color>=IIF(1=1,"Yellow","")</Color>
+        </Style>
+        <Height>0.1955in</Height>
+        <Value>="Page " &amp; Globals!PageNumber &amp; " of " &amp; Globals!TotalPages</Value>
+      </Textbox>
+      <Textbox Name="Text17">
+        <Top>0.21875in</Top>
+        <Width>4.09375in</Width>
+        <Style>
+          <FontWeight>700</FontWeight>
+          <FontFamily>Verdana</FontFamily>
+          <FontSize>8pt</FontSize>
+          <LineHeight>13pt</LineHeight>
+          <Format>dddd, MMMM d, yyyy  h:mm tt</Format>
+          <TextAlign>Left</TextAlign>
+          <Color>=IIF(1=1,"Yellow","")</Color>
+        </Style>
+        <Height>0.1875in</Height>
+        <Value>=Globals!ExecutionTime</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>0.46875in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <Style>
+      <BackgroundColor>#738cad</BackgroundColor>
+    </Style>
+  </PageFooter>
+  <PageHeight>8.5in</PageHeight>
+</Report>

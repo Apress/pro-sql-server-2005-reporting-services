@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <InteractiveHeight>11in</InteractiveHeight>
+  <PageWidth>11in</PageWidth>
+  <rd:ReportID>bb837f8c-970b-47a2-ad22-1acfc63d5d85</rd:ReportID>
+  <ReportParameters>
+    <ReportParameter Name="Topn">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value />
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Show Only the Top N Accounts:</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="GroupBy">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>address1_stateorprovince</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Group By</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>name</Value>
+            <Label>Account</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>industrycodename</Value>
+            <Label>Industry</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>owneridname</Value>
+            <Label>Sales Person</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>address1_stateorprovince</Value>
+            <Label>State/Province</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>statecodename</Value>
+            <Label>Status</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>territorycodename</Value>
+            <Label>Territory</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <DataSources>
+    <DataSource Name="Adventure_Works_Cycle_MSCRM">
+      <rd:DataSourceID>de1a6d3d-f02d-4d82-8e1a-e153d02ae9c4</rd:DataSourceID>
+      <DataSourceReference>Adventure_Works_Cycle_MSCRM</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <rd:GridSpacing>0.03125in</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ReportItems>
+      <Chart Name="Account_Revenue_Chart">
+        <Legend>
+          <Visible>true</Visible>
+          <Style>
+            <FontWeight>700</FontWeight>
+            <FontFamily>Tahoma</FontFamily>
+            <BorderStyle>
+              <Default>Solid</Default>
+            </BorderStyle>
+          </Style>
+          <Position>RightCenter</Position>
+        </Legend>
+        <CategoryAxis>
+          <Axis>
+            <Title />
+            <MajorGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </MajorGridLines>
+            <MinorGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </MinorGridLines>
+            <MajorTickMarks>Outside</MajorTickMarks>
+            <Min>0</Min>
+            <Visible>true</Visible>
+          </Axis>
+        </CategoryAxis>
+        <PointWidth>0</PointWidth>
+        <PlotArea>
+          <Style>
+            <BackgroundColor>LightGrey</BackgroundColor>
+          </Style>
+        </PlotArea>
+        <ThreeDProperties>
+          <Enabled>true</Enabled>
+          <Rotation>30</Rotation>
+          <Inclination>30</Inclination>
+          <Shading>Simple</Shading>
+          <WallThickness>50</WallThickness>
+        </ThreeDProperties>
+        <DataSetName>Account_Detail</DataSetName>
+        <ValueAxis>
+          <Axis>
+            <Title />
+            <MajorGridLines>
+              <ShowGridLines>true</ShowGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </MajorGridLines>
+            <MinorGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </MinorGridLines>
+            <MajorTickMarks>Outside</MajorTickMarks>
+            <Min>0</Min>
+            <Margin>true</Margin>
+            <Visible>true</Visible>
+            <Scalar>true</Scalar>
+          </Axis>
+        </ValueAxis>
+        <Type>Doughnut</Type>
+        <Width>8.03125in</Width>
+        <Subtype>Exploded</Subtype>
+        <CategoryGroupings>
+          <CategoryGrouping>
+            <DynamicCategories>
+              <Grouping Name="Account_Revenue_Chart_GroupBy">
+                <GroupExpressions>
+                  <GroupExpression>=Fields(Parameters!GroupBy.Value).Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <Label />
+            </DynamicCategories>
+          </CategoryGrouping>
+        </CategoryGroupings>
+        <Palette>Default</Palette>
+        <ChartData>
+          <ChartSeries>
+            <DataPoints>
+              <DataPoint>
+                <DataValues>
+                  <DataValue>
+                    <Value>=Sum(Fields!revenue.Value)</Value>
+                  </DataValue>
+                </DataValues>
+                <DataLabel>
+                  <Style>
+                    <FontWeight>700</FontWeight>
+                    <FontFamily>Verdana</FontFamily>
+                    <FontSize>8pt</FontSize>
+                    <Format>C0</Format>
+                  </Style>
+                  <Value>=Sum(Fields!revenue.Value)</Value>
+                  <Position>Bottom</Position>
+                  <Visible>true</Visible>
+                </DataLabel>
+                <Style />
+                <Marker>
+                  <Size>6pt</Size>
+                </Marker>
+              </DataPoint>
+            </DataPoints>
+          </ChartSeries>
+        </ChartData>
+        <Style>
+          <BackgroundColor>LightGrey</BackgroundColor>
+        </Style>
+        <Title>
+          <Style>
+            <FontWeight>700</FontWeight>
+            <FontFamily>Tahoma</FontFamily>
+            <FontSize>14pt</FontSize>
+          </Style>
+        </Title>
+      </Chart>
+    </ReportItems>
+    <Height>4.5625in</Height>
+    <Style />
+  </Body>
+  <PageHeader>
+    <ReportItems>
+      <Textbox Name="textbox1">
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Left>0.03125in</Left>
+        <Top>0.0625in</Top>
+        <Width>7.96875in</Width>
+        <Style>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontFamily>Tahoma</FontFamily>
+          <PaddingTop>2pt</PaddingTop>
+          <FontSize>14pt</FontSize>
+          <TextAlign>Center</TextAlign>
+          <Color>Yellow</Color>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.34375in</Height>
+        <Value>="Account Revenue by " &amp; Parameters!GroupBy.Label</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>0.46875in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <Style>
+      <BackgroundColor>#738cad</BackgroundColor>
+    </Style>
+  </PageHeader>
+  <DataSets>
+    <DataSet Name="Account_Detail">
+      <Fields>
+        <Field Name="revenue">
+          <DataField>revenue</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="name">
+          <DataField>name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="address1_stateorprovince">
+          <DataField>address1_stateorprovince</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="owneridname">
+          <DataField>owneridname</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="industrycodename">
+          <DataField>industrycodename</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="statecodename">
+          <DataField>statecodename</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="territorycode">
+          <DataField>territorycode</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="territorycodename">
+          <DataField>territorycodename</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>Adventure_Works_Cycle_MSCRM</DataSourceName>
+        <CommandText>declare @SQLString varchar(1000)
+
+if @Topn = ''
+BEGIN
+  set @SQLString = 'SELECT 	revenue, 
+	name, 
+	address1_stateorprovince, 
+	owneridname, 
+CASE	industrycode
+	WHEN 14 THEN ' + '''Entertainment Retail''' + '
+	WHEN 15 THEN ' + '''Equipment Rental and Leasing''' + '
+END	AS industrycodename, 
+CASE	statecode 
+	WHEN 0 THEN '+ '''Active''' + '
+	WHEN 1 THEN '+ '''Inactive''' + '
+END as statecodename,   
+	territorycode ,  
+CASE  
+	WHEN territoryidname IS NULL THEN'+ '''Other''' + '
+	ELSE territoryidname
+END as territorycodename FROM  account ORDER BY revenue DESC'
+END
+
+ELSE 
+
+BEGIN
+  set @SQLString = 'SELECT  TOP ' + @Topn + ' revenue, 
+	name, 
+	address1_stateorprovince, 
+	owneridname, 
+CASE	industrycode
+	WHEN 14 THEN ' + '''Entertainment Retail''' + '
+	WHEN 15 THEN ' + '''Equipment Rental and Leasing''' + '
+END	AS industrycodename, 
+CASE	statecode 
+	WHEN 0 THEN '+ '''Active''' + '
+	WHEN 1 THEN '+ '''Inactive''' + '
+END as statecodename,   
+	territorycode ,  
+CASE  
+	WHEN territoryidname IS NULL THEN'+ '''Other''' + '
+	ELSE territoryidname
+END as territorycodename FROM  account ORDER BY revenue DESC'
+END
+
+exec (@SQLString)</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@Topn">
+            <Value>=Parameters!Topn.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Author>Microsoft</Author>
+  <Code>Function translateIndustryCode(code as string)
+	if code = "14" then
+		return "Entertainment Retail"
+	else if code = "15" then
+		return "Equipment Rental and Leasing"
+	end if
+End Function
+
+Function translateTerritoryCode(code as string)
+	if code = "14" then
+		return "Entertainment Retail"
+	else if code = "15" then
+		return "Equipment Rental and Leasing"
+	end if
+End Function
+
+Function translateStateCode(code as string)
+	if code = "1" then
+		return "Draft"
+	else if code = "2"
+		return "Unapproved"
+	else if code = "3"
+		return "Published"
+	end if
+End Function</Code>
+  <Width>8.0625in</Width>
+  <Description>This report shows a doughnut chart of revenue grouped by Account, Industry, Salesperson, State/Province, Status, or Territory, and also allows you to filter the report to only show the groupings for the top n accounts.</Description>
+  <PageFooter>
+    <ReportItems>
+      <Textbox Name="Text17">
+        <Left>0.03125in</Left>
+        <Top>0.09375in</Top>
+        <Width>7.96875in</Width>
+        <Style>
+          <FontWeight>700</FontWeight>
+          <FontFamily>Verdana</FontFamily>
+          <FontSize>8pt</FontSize>
+          <LineHeight>13pt</LineHeight>
+          <Format>dddd, MMMM d, yyyy  h:mm tt</Format>
+          <TextAlign>Center</TextAlign>
+          <Color>=IIF(1=1,"Yellow","")</Color>
+        </Style>
+        <Height>0.25in</Height>
+        <Value>=Globals!ExecutionTime</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>0.46875in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <Style>
+      <BackgroundColor>#738cad</BackgroundColor>
+    </Style>
+  </PageFooter>
+  <PageHeight>8.5in</PageHeight>
+</Report>

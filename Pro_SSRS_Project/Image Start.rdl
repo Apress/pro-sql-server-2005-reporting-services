@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="Pro_SSRS">
+      <DataSourceReference>Pro_SSRS</DataSourceReference>
+      <rd:DataSourceID>808d806e-55e4-47f5-be63-384ccbcbe120</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <BottomMargin>1in</BottomMargin>
+  <RightMargin>1in</RightMargin>
+  <PageWidth>11in</PageWidth>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ReportItems>
+      <List Name="list1">
+        <ReportItems>
+          <Textbox Name="textbox5">
+            <Top>1in</Top>
+            <ZIndex>9</ZIndex>
+            <Width>0.5in</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <FontWeight>700</FontWeight>
+              <Color>Firebrick</Color>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.125in</Height>
+            <Value>DNR:</Value>
+          </Textbox>
+          <Textbox Name="textbox4">
+            <Top>0.875in</Top>
+            <ZIndex>8</ZIndex>
+            <Width>0.5in</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <FontWeight>700</FontWeight>
+              <Color>Firebrick</Color>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.125in</Height>
+            <Value>DOB</Value>
+          </Textbox>
+          <Textbox Name="textbox3">
+            <Top>0.625in</Top>
+            <ZIndex>7</ZIndex>
+            <Width>0.75in</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <FontWeight>700</FontWeight>
+              <Color>Firebrick</Color>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.25in</Height>
+            <Value>Address</Value>
+          </Textbox>
+          <Textbox Name="textbox2">
+            <Top>0.375in</Top>
+            <ZIndex>6</ZIndex>
+            <Width>1.125in</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <FontWeight>700</FontWeight>
+              <Color>Firebrick</Color>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.25in</Height>
+            <Value>Patient Name</Value>
+          </Textbox>
+          <Textbox Name="textbox1">
+            <Top>0.125in</Top>
+            <rd:DefaultName>textbox1</rd:DefaultName>
+            <ZIndex>5</ZIndex>
+            <Width>1in</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <FontWeight>700</FontWeight>
+              <Color>Firebrick</Color>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.25in</Height>
+            <Value>Patient ID #</Value>
+          </Textbox>
+          <Textbox Name="DoNotResuscitate">
+            <Left>0.5in</Left>
+            <Top>1in</Top>
+            <rd:DefaultName>DoNotResuscitate</rd:DefaultName>
+            <ZIndex>4</ZIndex>
+            <Width>1.75in</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.125in</Height>
+            <Value>=Iif(Fields!DoNotResuscitate.Value = -1, "Do Not Resuscitate", "Resuscitate")</Value>
+          </Textbox>
+          <Textbox Name="DOB">
+            <Left>0.5in</Left>
+            <Top>0.875in</Top>
+            <rd:DefaultName>DOB</rd:DefaultName>
+            <ZIndex>3</ZIndex>
+            <Width>1in</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <Format>d</Format>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.125in</Height>
+            <Value>=First(Fields!DOB.Value)</Value>
+          </Textbox>
+          <Textbox Name="PatID">
+            <Left>1in</Left>
+            <Top>0.125in</Top>
+            <rd:DefaultName>PatID</rd:DefaultName>
+            <ZIndex>2</ZIndex>
+            <Width>1in</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.25in</Height>
+            <Value>=Fields!PatID.Value</Value>
+          </Textbox>
+          <Textbox Name="City">
+            <Left>0.625in</Left>
+            <Top>0.625in</Top>
+            <rd:DefaultName>City</rd:DefaultName>
+            <ZIndex>1</ZIndex>
+            <Width>1.75in</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.25in</Height>
+            <Value>=rtrim(Fields!City.Value) &amp;
+" " &amp;
+Fields!State.Value &amp; 
+" " &amp;
+Fields!Zip.Value</Value>
+          </Textbox>
+          <Textbox Name="LastName">
+            <Left>1.125in</Left>
+            <Top>0.375in</Top>
+            <rd:DefaultName>LastName</rd:DefaultName>
+            <Width>1.25in</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.25in</Height>
+            <Value>=rtrim(Fields!LastName.Value) &amp; ",  " &amp; rtrim( Fields!FirstName.Value)</Value>
+          </Textbox>
+        </ReportItems>
+        <DataSetName>Get_Image</DataSetName>
+        <PageBreakAtEnd>true</PageBreakAtEnd>
+        <Grouping Name="list1_Details_Group">
+          <GroupExpressions>
+            <GroupExpression>=Fields!DocumentLength.Value</GroupExpression>
+          </GroupExpressions>
+        </Grouping>
+      </List>
+    </ReportItems>
+    <Height>1.5in</Height>
+  </Body>
+  <rd:ReportID>f31cd3d0-8c74-4392-aa5f-ce79dcf9d22c</rd:ReportID>
+  <LeftMargin>1in</LeftMargin>
+  <DataSets>
+    <DataSet Name="Get_Image">
+      <Query>
+        <CommandText>SELECT     DocumentImage.DocumentImage, PatEMRDoc.Dscr, Patient.PatID, Patient.LastName, Patient.FirstName, Patient.Address1, Patient.State, Patient.Zip, 
+                      Patient.City, Patient.DOB, Patient.DoNotResuscitate, DocumentImage.DocumentLength
+FROM         Patient INNER JOIN
+                      PatEMRDoc ON Patient.PatID = PatEMRDoc.PatID INNER JOIN
+                      DocumentImage ON PatEMRDoc.DocumentImageID = DocumentImage.DocumentImageID
+WHERE     (DocumentImage.UpdatedDate &gt; '06/01/04')</CommandText>
+        <DataSourceName>Pro_SSRS</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="DocumentImage">
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+          <DataField>DocumentImage</DataField>
+        </Field>
+        <Field Name="Dscr">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Dscr</DataField>
+        </Field>
+        <Field Name="PatID">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>PatID</DataField>
+        </Field>
+        <Field Name="LastName">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>LastName</DataField>
+        </Field>
+        <Field Name="FirstName">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>FirstName</DataField>
+        </Field>
+        <Field Name="Address1">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Address1</DataField>
+        </Field>
+        <Field Name="State">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>State</DataField>
+        </Field>
+        <Field Name="Zip">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Zip</DataField>
+        </Field>
+        <Field Name="City">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>City</DataField>
+        </Field>
+        <Field Name="DOB">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>DOB</DataField>
+        </Field>
+        <Field Name="DoNotResuscitate">
+          <rd:TypeName>System.Int16</rd:TypeName>
+          <DataField>DoNotResuscitate</DataField>
+        </Field>
+        <Field Name="DocumentLength">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>DocumentLength</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Code />
+  <Width>5.125in</Width>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <Language>en-US</Language>
+  <TopMargin>1in</TopMargin>
+  <PageHeight>8.5in</PageHeight>
+</Report>

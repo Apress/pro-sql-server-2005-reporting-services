@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <InteractiveHeight>11in</InteractiveHeight>
+  <rd:ReportID>56197869-c103-4a98-8a4d-b716363050ae</rd:ReportID>
+  <ReportParameters>
+    <ReportParameter Name="SixMonthDate">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=FormatDateTime(DateAdd(DateInterval.Month,6,Date.Today),DateFormat.ShortDate)</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>6  Month Projected Date</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <DataSources>
+    <DataSource Name="HealthWare_Corporation_MSCRM">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString>Data Source=HWCS02;Initial Catalog=HealthWare_Corporation_MSCRM</ConnectString>
+        <IntegratedSecurity>true</IntegratedSecurity>
+      </ConnectionProperties>
+      <rd:DataSourceID>9d5e99c8-35a6-41a5-9b07-1af2f1eece7a</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ReportItems>
+      <Chart Name="Sales_Projections">
+        <Legend>
+          <Visible>true</Visible>
+          <Style>
+            <BorderStyle>
+              <Default>Solid</Default>
+            </BorderStyle>
+          </Style>
+          <Position>RightCenter</Position>
+        </Legend>
+        <CategoryAxis>
+          <Axis>
+            <Title>
+              <Position>Near</Position>
+            </Title>
+            <Style />
+            <MajorGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </MajorGridLines>
+            <MinorGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </MinorGridLines>
+            <MajorTickMarks>Outside</MajorTickMarks>
+            <Min>0</Min>
+            <Visible>true</Visible>
+          </Axis>
+        </CategoryAxis>
+        <PointWidth>0</PointWidth>
+        <Left>0.125in</Left>
+        <PlotArea>
+          <Style>
+            <BorderStyle>
+              <Default>Solid</Default>
+            </BorderStyle>
+            <BackgroundColor>LightGrey</BackgroundColor>
+          </Style>
+        </PlotArea>
+        <ThreeDProperties>
+          <Enabled>true</Enabled>
+          <Rotation>35</Rotation>
+          <Shading>Simple</Shading>
+          <DrawingStyle>Cylinder</DrawingStyle>
+        </ThreeDProperties>
+        <DataSetName>Activities</DataSetName>
+        <SeriesGroupings>
+          <SeriesGrouping>
+            <DynamicSeries>
+              <Grouping Name="chart1_SeriesGroup1">
+                <GroupExpressions>
+                  <GroupExpression>=Iif(Fields!Lead_Source.Value is Nothing,"Unspecified",Fields!Lead_Source.Value)</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <Label>=Iif(Fields!Lead_Source.Value is Nothing,"Unspecified",Fields!Lead_Source.Value)</Label>
+            </DynamicSeries>
+          </SeriesGrouping>
+        </SeriesGroupings>
+        <ValueAxis>
+          <Axis>
+            <Title />
+            <Style>
+              <FontWeight>600</FontWeight>
+              <Format>C0</Format>
+              <Color>DodgerBlue</Color>
+            </Style>
+            <MajorGridLines>
+              <ShowGridLines>true</ShowGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </MajorGridLines>
+            <MinorGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </MinorGridLines>
+            <MajorTickMarks>Outside</MajorTickMarks>
+            <Min>0</Min>
+            <Margin>true</Margin>
+            <Visible>true</Visible>
+            <Scalar>true</Scalar>
+          </Axis>
+        </ValueAxis>
+        <Type>Bar</Type>
+        <Width>6.25in</Width>
+        <Subtype>Plain</Subtype>
+        <CategoryGroupings>
+          <CategoryGrouping>
+            <DynamicCategories>
+              <Grouping Name="chart1_CategoryGroup2">
+                <GroupExpressions>
+                  <GroupExpression>=DatePart("m",Fields!EstimatedCloseDate.Value)</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <Sorting>
+                <SortBy>
+                  <SortExpression>=Fields!EstimatedCloseDate.Value</SortExpression>
+                  <Direction>Ascending</Direction>
+                </SortBy>
+              </Sorting>
+              <Label>=Fields!Estimate_Close.Value</Label>
+            </DynamicCategories>
+          </CategoryGrouping>
+        </CategoryGroupings>
+        <Palette>Pastel</Palette>
+        <ChartData>
+          <ChartSeries>
+            <DataPoints>
+              <DataPoint>
+                <DataValues>
+                  <DataValue>
+                    <Value>=Sum(Fields!EstimatedValue.Value)</Value>
+                  </DataValue>
+                </DataValues>
+                <DataLabel />
+                <Marker />
+              </DataPoint>
+            </DataPoints>
+          </ChartSeries>
+        </ChartData>
+        <Style>
+          <BackgroundColor>White</BackgroundColor>
+        </Style>
+        <Title />
+        <Height>3.75in</Height>
+      </Chart>
+    </ReportItems>
+    <Height>4.5in</Height>
+    <Style />
+  </Body>
+  <PageHeader>
+    <ReportItems>
+      <Textbox Name="textbox18">
+        <rd:DefaultName>textbox18</rd:DefaultName>
+        <Left>0.125in</Left>
+        <Width>8.625in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <TextDecoration>Underline</TextDecoration>
+          <PaddingTop>2pt</PaddingTop>
+          <FontSize>18pt</FontSize>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.375in</Height>
+        <Value>= "Sales Projections To " &amp;" " &amp; Parameters!SixMonthDate.Value</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>0.5in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <Style />
+  </PageHeader>
+  <BottomMargin>1in</BottomMargin>
+  <LeftMargin>1in</LeftMargin>
+  <DataSets>
+    <DataSet Name="Activities">
+      <Fields>
+        <Field Name="EstimatedCloseDate">
+          <DataField>EstimatedCloseDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StatusCode">
+          <DataField>StatusCode</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="EstimatedValue">
+          <DataField>EstimatedValue</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Estimate_Close">
+          <DataField>Estimate_Close</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CreatedOn">
+          <DataField>CreatedOn</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Lead_Source">
+          <DataField>Lead Source</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NumberOfEmployees">
+          <DataField>NumberOfEmployees</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="SIC">
+          <DataField>SIC</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Lead_Contact">
+          <DataField>Lead Contact</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IndustryCode">
+          <DataField>IndustryCode</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>HealthWare_Corporation_MSCRM</DataSourceName>
+        <CommandText>SELECT     OpportunityBase.EstimatedCloseDate, OpportunityBase.Name, OpportunityBase.StatusCode, OpportunityBase.EstimatedValue, 
+                      RTRIM(CAST(DATEPART(yyyy, OpportunityBase.EstimatedCloseDate) AS char(5)) + DATENAME(m, OpportunityBase.EstimatedCloseDate)) 
+                      AS Estimate_Close, OpportunityBase.CreatedOn, StringMap.Value AS [Lead Source], LeadBase.NumberOfEmployees, LeadBase.SIC, 
+                      LeadBase.FullName AS [Lead Contact], LeadBase.IndustryCode
+FROM         OpportunityBase INNER JOIN
+                      LeadBase ON OpportunityBase.OriginatingLeadId = LeadBase.LeadId LEFT OUTER JOIN
+                      StringMap ON LeadBase.LeadSourceCode = StringMap.AttributeValue AND StringMap.AttributeName = 'leadsourcecode'
+WHERE     (OpportunityBase.EstimatedCloseDate BETWEEN GETDATE() AND @SixMonthDate) AND (OpportunityBase.EstimatedCloseDate IS NOT NULL) AND 
+                      (NOT (OpportunityBase.StatusCode IN (4, 5)))
+ORDER BY OpportunityBase.Name</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@SixMonthDate">
+            <Value>=Parameters!SixMonthDate.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+    <DataSet Name="User">
+      <Fields>
+        <Field Name="fullname">
+          <DataField>fullname</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>HealthWare_Corporation_MSCRM</DataSourceName>
+        <CommandText>select distinct fullname from systemuserbase</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <RightMargin>1in</RightMargin>
+  <Width>14.29167in</Width>
+  <Language>en-US</Language>
+  <TopMargin>1in</TopMargin>
+</Report>
